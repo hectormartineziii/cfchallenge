@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
 <script>
 var data = [ 
 { 
@@ -36,16 +34,23 @@ awesomeIndex: 6
 ];
 
 function showIndex(collection){
-	var sum = _.sum(collection,function(field){
-		return field.awesomeIndex
-	})
+	var sum = 0;
+	for (var i=0; i<collection.length; i++){
+		if (collection[i].awesomeIndex)
+			sum += collection[i].awesomeIndex;
+	}
 	var avg = sum/collection.length;
-	$("#awesome-index").append("<p>"+avg.toFixed(2)+"</p>");
+	
+	var newP = document.createElement("p");
+	newP.innerHTML = avg.toFixed(2);
+
+	var targetDiv = document.getElementById("awesome-index");
+	targetDiv.appendChild(newP);
 }
 
-$(document).ready(function(){
+window.onload = function(){
 	showIndex(data);
-});
+};
 </script>
 <style>
 #awesome-index p {
