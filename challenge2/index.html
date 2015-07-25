@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
+<script>
+var data = [ 
+{ 
+name: 'Trinity', 
+occupation: 'programmer', 
+awesomeIndex: 10 
+}, 
+{ 
+name: 'Mater', 
+occupation: 'tow truck' 
+}, 
+{ 
+name: 'Number 5', 
+occupation: 'programmer', 
+awesomeIndex: 7 
+}, 
+{ 
+name: 'Alice', 
+occupation: 'programmer', 
+awesomeIndex: 9 
+}, 
+{ 
+name: 'Zaphod', 
+occupation: 'President of the Galaxy' 
+}, 
+{ 
+name: 'Bob Parr', 
+occupation: 'programmer', 
+awesomeIndex: 6 
+} 
+];
+
+function showIndex(collection){
+	var sum = _.sum(collection,function(field){
+		return field.awesomeIndex
+	})
+	var avg = sum/collection.length;
+	$("#awesome-index").append("<p>"+avg.toFixed(2)+"</p>");
+}
+
+$(document).ready(function(){
+	showIndex(data);
+});
+</script>
+<style>
+#awesome-index p {
+	font-family: helvetica;
+	text-align: center;
+	border: 3px solid red;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+	<div id="awesome-index"></div>
+</body>
+</html>
