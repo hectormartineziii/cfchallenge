@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 
 var site = fs.readFileSync(path.join(__dirname,'/index.html'));
-0
+
 
 http.createServer(function(req,res){
 	if ('/' == req.url){
