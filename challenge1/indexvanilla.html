@@ -33,13 +33,18 @@ awesomeIndex: 6
 } 
 ];
 
-function showIndex(collection){
+function average(collection){
 	var sum = 0;
 	for (var i=0; i<collection.length; i++){
 		if (collection[i].awesomeIndex)
 			sum += collection[i].awesomeIndex;
 	}
-	var avg = sum/collection.length;
+	return sum/collection.length;	
+}
+
+function showAvgIndex(collection){
+
+	var avg = average(collection);
 	
 	var newP = document.createElement("p");
 	newP.innerHTML = avg.toFixed(2);
@@ -49,7 +54,7 @@ function showIndex(collection){
 }
 
 window.onload = function(){
-	showIndex(data);
+	showAvgIndex(data);
 };
 </script>
 <style>

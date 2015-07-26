@@ -35,16 +35,20 @@ awesomeIndex: 6
 } 
 ];
 
-function showIndex(collection){
+function average(collection){
 	var sum = _.sum(collection,function(field){
 		return field.awesomeIndex
 	})
-	var avg = sum/collection.length;
+	return sum/collection.length;
+}
+
+function showAvgIndex(collection){
+	var avg = average(collection);
 	$("#awesome-index").append("<p>"+avg.toFixed(2)+"</p>");
 }
 
 $(document).ready(function(){
-	showIndex(data);
+	showAvgIndex(data);
 });
 </script>
 <style>
