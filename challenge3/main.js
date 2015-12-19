@@ -14,3 +14,18 @@ seattlePublicLibrary.removeBook("Javascript", "B");
 seattlePublicLibrary.removeShelf("A");
 seattlePublicLibrary.removeShelf("B");
 console.log(seattlePublicLibrary.showLibrary());
+
+
+
+// addShelf and addBook methods should be passed objects.
+// put a
+// make my code work
+
+
+function Book(){
+
+};
+
+var myBook = new Book('Javascript the OK parts', '43262346');
+console.log(myBook.name);
+console.log(myBook.toString());

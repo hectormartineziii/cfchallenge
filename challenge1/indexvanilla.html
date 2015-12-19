@@ -35,11 +35,14 @@ awesomeIndex: 6
 
 function average(collection){
 	var sum = 0;
+	var counter = 0;
 	for (var i=0; i<collection.length; i++){
-		if (collection[i].awesomeIndex)
+		if (collection[i].awesomeIndex){
 			sum += collection[i].awesomeIndex;
+			counter += 1;
+		}
 	}
-	return sum/collection.length;	
+	return sum/counter;	
 }
 
 function showAvgIndex(collection){
